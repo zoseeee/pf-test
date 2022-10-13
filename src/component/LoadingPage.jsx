@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import TypeItTest from "./TypeIt";
-import "../css/Main.scss";
+import MakeIt from "../pages/TypeIt";
 
-const DB = ["WELCOME", "TO", "MY", "PORTFOLIO", <TypeItTest />];
+const DB = ["WELCOME", "TO", "MY", "PORTFOLIO", <MakeIt />];
 
-const LandingPage = () => {
+const LoadingPage = () => {
   const [num, setNum] = useState(0);
 
   useEffect(() => {
@@ -19,10 +18,10 @@ const LandingPage = () => {
   }, [num]);
 
   return (
-    <div className="LangdingPage">
-      <span>{DB[num]}</span>
+    <div className="loadingPage">
+      <div className="loading-word">{DB[num]}</div>
     </div>
   );
 };
 
-export default LandingPage;
+export default LoadingPage;
