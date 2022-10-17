@@ -1,12 +1,19 @@
 $gc : #94B49F;
 $pc : #FF9494;
+$bc : #90A8CB;
 
-* {
-    outline: 1px solid #f00;
-}
+// * {
+//     outline: 1px solid #f00;
+// }
 
 body {
     background-color: black;
+    -ms-overflow-style: none;
+    background: url(../../public/assets/image/all_bg.png);
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 // LoadingPage --->
@@ -14,7 +21,8 @@ body {
     width: 100%;
     height: 100vh;
     background: url(../../public/assets/image/loadingPage_bg.jpg) no-repeat center center/cover;
-    font-family: 'Noto Serif Telugu', serif;
+    font-family: 'KoPub Batang', sans-serif;
+    color: $bc;
 
     .loading-word {
         position: absolute;
@@ -28,6 +36,15 @@ body {
             white-space: nowrap;
         }
     }
+
+    .glitch {
+        position: absolute;
+        bottom: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 26px;
+        color: white;
+    }
 }
 
 // Header --->
@@ -36,7 +53,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    line-height: 70px;
+    line-height: 100px;
     z-index: 99;
 
     .hd_items {
@@ -45,6 +62,10 @@ body {
         align-items: center;
         text-align: center;
         padding: 0 70px;
+
+        button {
+            color: white;
+        }
 
         .gnb {
             font-size: 18px;
@@ -65,11 +86,8 @@ body {
 // Home --->
 .Home {
     position: relative;
-
     width: 100%;
     height: 100vh;
-    background-color: $gc;
-
 
     .animation-box {
         display: flex;
@@ -139,27 +157,153 @@ body {
         z-index: 2;
 
         img {
+            display: block;
             width: 100%;
             height: 100%;
         }
+    }
+
+    button {
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 50px;
+        z-index: 999;
+        color: white;
+    }
+}
+
+.line {
+    width: 100%;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
     }
 }
 
 // About --->
 .About {
+    position: relative;
     width: 100%;
-    height: 2104px;
-    background: url(../../public/assets/image/portfolio.jpg);
+    height: 100vh;
+    background: url(../../public/assets/image/bg.jpg) no-repeat center center/cover;
+    font-family: 'KoPub Batang', sans-serif;
+
+    .inner {
+        display: flex;
+        text-align: right;
+
+        .left-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            p {
+                font-size: 24px;
+            }
+        }
+
+
+    }
+
+    .earth {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 422px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .forest {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            // filter: invert(99%) sepia(55%) saturate(0%) hue-rotate(302deg) brightness(114%) contrast(100%);
+        }
+    }
+
 }
 
 // Project --->
 .Project {
     width: 100%;
     height: 100vh;
+    background: url(../../public/assets/image/toss.png) no-repeat center center/cover;
 
-    span {
-        font-size: 100px;
-        font-weight: 900;
-        color: #fff;
+    .project-title {
+        border-bottom: 1px solid $bc;
+
+        h2 {
+            font-size: 100px;
+            font-weight: 900;
+            color: $bc;
+            padding: 10px 70px;
+        }
     }
+
+    .slide-content {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+
+        .right-box {
+            padding: 30px 80px;
+
+            h3 {
+                font-size: 50px;
+                font-family: 'KoPub Batang', sans-serif;
+                font-weight: 700;
+                margin-bottom: 13px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+
+            ul {
+                margin-bottom: 42px;
+
+                li {
+                    display: flex;
+
+                    span {
+                        display: block;
+                        width: 100px;
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: $bc;
+                    }
+
+                    p {
+                        font-size: 18px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+
+            button {
+                font-weight: 600;
+                font-size: 14px;
+                color: $bc;
+                border: 1px solid $bc;
+                padding: 14px 36px;
+                margin-right: 24px;
+            }
+        }
+    }
+
 }

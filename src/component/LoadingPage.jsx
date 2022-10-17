@@ -20,6 +20,7 @@ const LoadingPage = () => {
   return (
     <div className="loadingPage">
       <div className="loading-word">{DB[num]}</div>
+      <span className="glitch">LOADING</span>
     </div>
   );
 };

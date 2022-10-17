@@ -9,7 +9,7 @@ font
 */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "//cdn.jsdelivr.net/npm/font-kopub@1.0/kopubbatang.min.css";
 /*
 -------------------------------------
 
@@ -98,6 +98,13 @@ select,
 input,
 button {
   vertical-align: middle;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 b,
