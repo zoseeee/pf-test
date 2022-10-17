@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,10 +16,13 @@ const DB = [
     content: "2022 BIFF",
   },
 ];
+=======
+>>>>>>> 3c2c4b459d6fd1f5d9caf0a4dd1562123173309d
 
 const Project = () => {
   SwiperCore.use([Navigation]);
   return (
+<<<<<<< HEAD
     <section className="Project" id="project">
       <header className="project-title">
         <h2>MY PROJECT</h2>
@@ -77,6 +81,15 @@ const Project = () => {
         ))}
       </Swiper>
     </section>
+=======
+    <>
+      <div className="Project" id="project">
+        <header className="project-title">
+          <span>MY PROJECT</span>
+        </header>
+      </div>
+    </>
+>>>>>>> 3c2c4b459d6fd1f5d9caf0a4dd1562123173309d
   );
 };
 

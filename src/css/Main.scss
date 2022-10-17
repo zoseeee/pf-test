@@ -188,6 +188,7 @@ body {
 .About {
     position: relative;
     width: 100%;
+<<<<<<< HEAD
     height: 100vh;
     background: url(../../public/assets/image/bg.jpg) no-repeat center center/cover;
     font-family: 'KoPub Batang', sans-serif;
@@ -235,12 +236,27 @@ body {
         }
     }
 
+=======
+<<<<<<< HEAD
+    height: 1529px;
+    background: url(../../public/assets/image/Frame.jpg);
+=======
+    height: 2104px;
+    background: url(../../public/assets/image/portfolio.jpg);
+>>>>>>> 2965777d1722aa2618ebec8e786d20a7e2c967e4
+>>>>>>> 3c2c4b459d6fd1f5d9caf0a4dd1562123173309d
 }
 
 // Project --->
 .Project {
+    position: relative;
     width: 100%;
+<<<<<<< HEAD
+    height: 1529px;
+    // background: url(../../public/assets/image/all_bg.png);
+=======
     height: 100vh;
+<<<<<<< HEAD
     background: url(../../public/assets/image/toss.png) no-repeat center center/cover;
 
     .project-title {
@@ -307,3 +323,23 @@ body {
     }
 
 }
+=======
+>>>>>>> 2965777d1722aa2618ebec8e786d20a7e2c967e4
+
+    .project-title {
+        position: sticky;
+        top: 0;
+
+        span {
+            font-size: 100px;
+            font-weight: 900;
+            color: #fff;
+        }
+    }
+
+    
+}
+
+
+  
+>>>>>>> 3c2c4b459d6fd1f5d9caf0a4dd1562123173309d
