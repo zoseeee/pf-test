@@ -5,7 +5,8 @@ import Header from "./component/Header";
 import Home from "./component/Home";
 import About from "./component/About";
 import Project from "./component/Project";
-import Line from "./pages/Line";
+import Forest from "./pages/Forest";
+import Divider from "./pages/Divider";
 
 const App = () => {
   const [load, setLoad] = useState(true);
@@ -28,8 +29,9 @@ const App = () => {
   //     <Header />
   //     <main>
   //       <Home />
+  //       <Divider />
   //       <About />
-  //       <Line />
+  //       <Forest />
   //       <Project />
   //     </main>
   //   </div>
@@ -40,8 +42,9 @@ const App = () => {
       <Header />
       <main>
         <Home />
+        <Divider />
         <About />
-        <Line />
+        <Forest />
         <Project />
       </main>
     </div>

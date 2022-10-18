@@ -9,7 +9,6 @@ $bc : #90A8CB;
 body {
     background-color: black;
     -ms-overflow-style: none;
-    background: url(../../public/assets/image/all_bg.png);
 
     &::-webkit-scrollbar {
         display: none;
@@ -44,7 +43,55 @@ body {
         transform: translateX(-50%);
         font-size: 26px;
         color: white;
+        margin: 0 auto;
+
+        @keyframes noise-anim {
+            $steps: 20;
+
+            @for $i from 0 through $steps {
+                #{percentage($i*(1/$steps))} {
+                    clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+                }
+            }
+        }
+
+        &::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 2px;
+            text-shadow: -1px 0 red;
+            top: 0;
+            color: white;
+            background-color: black;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: noise-anim 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes noise-anim-2 {
+            $steps: 20;
+
+            @for $i from 0 through $steps {
+                #{percentage($i*(1/$steps))} {
+                    clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+                }
+            }
+        }
+
+        &::before {
+            content: attr(data-text);
+            position: absolute;
+            left: -2px;
+            text-shadow: 1px 0 blue;
+            top: 0;
+            color: white;
+            background-color: black;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: noise-anim-2 3s infinite linear alternate-reverse;
+        }
     }
+
 }
 
 // Header --->
@@ -54,7 +101,7 @@ body {
     left: 0;
     right: 0;
     line-height: 100px;
-    z-index: 99;
+    z-index: 999;
 
     .hd_items {
         display: flex;
@@ -88,38 +135,8 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-
-    .animation-box {
-        display: flex;
-        flex-direction: column;
-        z-index: 1;
-
-        .a,
-        .c,
-        .e,
-        .g,
-        .i,
-        .b,
-        .d,
-        .f,
-        .h,
-        .j {
-            width: 100%;
-            height: 10vh;
-            animation: left 1s;
-            background-color: black;
-        }
-    }
-
-    @keyframes left {
-        from {
-            transform: translateX(-100%);
-        }
-
-        to {
-            transform: translateX(0%);
-        }
-    }
+    background: url(../../public/assets/image/home_bg.jpg) no-repeat center center/cover;
+    animation-duration: 3s;
 
     .title-box {
         position: absolute;
@@ -147,22 +164,6 @@ body {
         }
     }
 
-    .cloud {
-        position: absolute;
-        width: 1600px;
-        height: 910px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-
-        img {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    }
-
     button {
         position: absolute;
         bottom: 100px;
@@ -174,23 +175,25 @@ body {
     }
 }
 
-.line {
+// Divider --->
+.Divider {
     width: 100%;
 
     img {
         display: block;
         width: 100%;
-        height: 100%;
     }
 }
 
 // About --->
 .About {
-    position: relative;
+    position: sticky;
+    top: 0;
     width: 100%;
     height: 100vh;
-    background: url(../../public/assets/image/bg.jpg) no-repeat center center/cover;
+    background: url(../../public/assets/image/bg_bc.jpg) no-repeat center center/cover;
     font-family: 'KoPub Batang', sans-serif;
+    z-index: -1;
 
     .inner {
         display: flex;
@@ -204,6 +207,10 @@ body {
             p {
                 font-size: 24px;
             }
+        }
+
+        .spaceman {
+            animation-duration: 5s;
         }
     }
 
@@ -232,8 +239,18 @@ body {
             // filter: invert(99%) sepia(55%) saturate(0%) hue-rotate(302deg) brightness(114%) contrast(100%);
         }
     }
+}
 
-    
+// Forest --->
+.Forest {
+    width: 100%;
+    z-index: 2;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 // Project --->
@@ -241,7 +258,9 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url(../../public/assets/image/toss.png) no-repeat center center/cover;
+    background: url(../../public/assets/image/toss.png) no-repeat center center/cover, url(../../public/assets/image/dot_bg.png) no-repeat center center/cover;
+    z-index: 2;
+    background-color: white;
 
     .project-title {
         border-bottom: 1px solid $bc;
@@ -307,12 +326,3 @@ body {
     }
 
 }
-
-
-   
-
-    
-
-
-  
-
