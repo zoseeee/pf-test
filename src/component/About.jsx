@@ -8,7 +8,7 @@ const About = () => {
         <div className="left-box">
           <div className="about-title-img">
             <img
-              src={process.env.PUBLIC_URL + "/assets/image/anti.png"}
+              src={process.env.PUBLIC_URL + "/assets/image/anti02.png"}
               alt=""
             />
           </div>
@@ -20,7 +20,7 @@ const About = () => {
           <p className="name">
             안녕하세요.
             <br />
-            무한한 세계🚀로 향하는 프론트엔드 개발자
+            실패를 원동력으로 성장하는🚀 프론트엔드 개발자
             이정은입니다.
           </p>
         </div>

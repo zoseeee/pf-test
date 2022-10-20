@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MakeIt from "../pages/TypeIt";
 
-const DB = ["WELCOME", "TO", "MY", "PORTFOLIO", <MakeIt />];
+const DB = ["WELCOME", "TO", "MY","2022", "PORTFOLIO", ];
 
 const LoadingPage = () => {
   const [num, setNum] = useState(0);

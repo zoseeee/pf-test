@@ -35,7 +35,11 @@ const App = () => {
   //       <Divider />
   //       <About />
   //       <Forest />
-  //       <Project />
+  //       <Routes>
+  //         <Route path="/portfolio-2022" element={<Project />} />
+  //         <Route path="/project02" element={<Project02 />} />
+  //         <Route path="/project03" element={<Project03 />} />
+  //       </Routes>
   //     </main>
   //   </div>
   // );
