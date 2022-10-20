@@ -4,15 +4,20 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SwiperCore, { Navigation, Pagination } from "swiper";
+import { NavLink } from "react-router-dom";
 
 const DB = [
   {
     id: 1,
-    content: "HINCE",
+    content: "YouTube",
+  },
+  {
+    id: 1,
+    content: "Spotify",
   },
   {
     id: 2,
-    content: "2022 BIFF",
+    content: "2022 PORTFOLIO",
   },
 ];
 
@@ -22,6 +27,38 @@ const Project = () => {
     <section className="Project" id="project">
       <header className="project-title">
         <h2>MY PROJECT</h2>
+        <ul>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                "navLink" + (isActive ? ".active" : "")
+              }
+              to="/portfolio-2022"
+            >
+              01
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                "navLink" + (isActive ? ".active" : "")
+              }
+              to="/project02"
+            >
+              02
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                "navLink" + (isActive ? ".active" : "")
+              }
+              to="/project03"
+            >
+              03
+            </NavLink>
+          </li>
+        </ul>
       </header>
       <Swiper
         // spaceBetween={50}

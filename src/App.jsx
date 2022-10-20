@@ -7,6 +7,9 @@ import About from "./component/About";
 import Project from "./component/Project";
 import Forest from "./pages/Forest";
 import Divider from "./pages/Divider";
+import { Route, Routes } from "react-router-dom";
+import Project02 from "./component/Project02";
+import Project03 from "./component/Project03";
 
 const App = () => {
   const [load, setLoad] = useState(true);
@@ -45,7 +48,11 @@ const App = () => {
         <Divider />
         <About />
         <Forest />
-        <Project />
+        <Routes>
+          <Route path="/portfolio-2022" element={<Project />}/>
+          <Route path="/project02" element={<Project02 />}/>
+          <Route path="/project03" element={<Project03 />}/>
+        </Routes>
       </main>
     </div>
   );
