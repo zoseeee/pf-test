@@ -16,35 +16,18 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoad(false);
-    }, 8500);
+    }, 6000);
     return () => {
       clearTimeout(timer);
     };
   });
 
   // 로딩화면 포함
-  // return load === true ? (
-  //   <div>
-  //     <LoadingPage />
-  //   </div>
-  // ) : (
-  //   <div className="Wrap">
-  //     <Header />
-  //     <main>
-  //       <Home />
-  //       <Divider />
-  //       <About />
-  //       <Forest />
-  //       <Routes>
-  //         <Route path="/portfolio-2022" element={<Project />} />
-  //         <Route path="/project02" element={<Project02 />} />
-  //         <Route path="/project03" element={<Project03 />} />
-  //       </Routes>
-  //     </main>
-  //   </div>
-  // );
-
-  return (
+  return load === true ? (
+    <div>
+      <LoadingPage />
+    </div>
+  ) : (
     <div className="Wrap">
       <Header />
       <main>
@@ -53,13 +36,30 @@ const App = () => {
         <About />
         <Forest />
         <Routes>
-          <Route path="/portfolio-2022" element={<Project />}/>
-          <Route path="/project02" element={<Project02 />}/>
-          <Route path="/project03" element={<Project03 />}/>
+          <Route path="/portfolio-2022" element={<Project />} />
+          <Route path="/project02" element={<Project02 />} />
+          <Route path="/project03" element={<Project03 />} />
         </Routes>
       </main>
     </div>
   );
+
+  // return (
+  //   <div className="Wrap">
+  //     <Header />
+  //     <main>
+  //       <Home />
+  //       <Divider />
+  //       <About />
+  //       <Forest />
+  //       <Routes>
+  //         <Route path="/portfolio-2022" element={<Project />}/>
+  //         <Route path="/project02" element={<Project02 />}/>
+  //         <Route path="/project03" element={<Project03 />}/>
+  //       </Routes>
+  //     </main>
+  //   </div>
+  // );
 };
 
 export default App;

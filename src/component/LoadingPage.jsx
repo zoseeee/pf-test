@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import MakeIt from "../pages/TypeIt";
 
-const DB = ["WELCOME", "TO", "MY","2022", "PORTFOLIO", ];
+const DB = ["WELCOME", "TO", "MY","2022", "PORTFOLIO" ];
 
 const LoadingPage = () => {
   const [num, setNum] = useState(0);
@@ -13,14 +12,14 @@ const LoadingPage = () => {
       }
       setNum(num + 1);
     };
-    const intervalID = setInterval(shuffle, 500);
+    const intervalID = setInterval(shuffle, 650);
     return () => clearInterval(intervalID);
   }, [num]);
 
   return (
     <div className="loadingPage">
       <div className="loading-word">{DB[num]}</div>
-      <div className="glitch" data-text="LOADING">LOADING</div>
+      <div className="Loading" data-text="LOADING">LOADING &#128498;</div>
     </div>
   );
 };

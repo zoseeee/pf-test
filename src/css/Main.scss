@@ -19,9 +19,9 @@ body {
 .loadingPage {
     width: 100%;
     height: 100vh;
-    background: url(../../public/assets/image/loadingPage_bg.jpg) no-repeat center center/cover;
+    background: url(../../public/assets/image/project03_bg.jpg) no-repeat center center/cover;
     font-family: 'KoPub Batang', sans-serif;
-    color: #256D85;
+    color: #fff;
 
     .loading-word {
         position: absolute;
@@ -29,10 +29,25 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 220px;
+    }
 
-        .makeIt {
-            font-size: 160px;
-            white-space: nowrap;
+    .Loading {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 24px;
+        animation: flash 1s ease infinite alternate;
+
+        @keyframes flash {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
         }
     }
 }
@@ -57,19 +72,25 @@ body {
             position: relative;
             transform: translateY(10%);
             z-index: 1000;
-            
+
             div {
-                &:nth-child(1), &:nth-child(3) {
+                transition: all 0.2s ease-out;
+
+                &:nth-child(1),
+                &:nth-child(3) {
                     width: 30px;
                     height: 4px;
                     background-color: #fff;
                     margin-bottom: 7px;
                 }
+
                 &:nth-child(2) {
                     width: 41px;
                     height: 4px;
                     background-color: #fff;
                     margin-bottom: 7px;
+                    transition: all 0.5s ease-out;
+                    opacity: 1;
                 }
             }
 
@@ -79,17 +100,20 @@ body {
                     top: 0;
                     width: 41px;
                     height: 4px;
-                    background-color: #256D85;;
+                    background-color: #256D85;
+                    ;
                     margin-bottom: 7px;
                     rotate: 45deg;
                 }
+
                 &:nth-child(2) {
                     width: 41px;
                     height: 4px;
-                    background-color: #256D85;;
+                    background-color: #256D85;
                     margin-bottom: 7px;
-                    display: none;
+                    opacity: 0;
                 }
+
                 &:nth-child(3) {
                     position: absolute;
                     top: 0;
@@ -116,6 +140,22 @@ body {
             }
         }
     }
+
+    .show-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+    }
+
+    .hide-menu {
+        width: 100%;
+        height: 100vh;
+        display: none;
+    }
 }
 
 // Home --->
@@ -124,7 +164,17 @@ body {
     width: 100%;
     height: 100vh;
     background: url(../../public/assets/image/home_bg.jpg) no-repeat center center/cover;
-    animation-duration: 3s;
+    animation: fadein 1s ease-in-out;
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
 
     .title-box {
         position: absolute;
@@ -154,11 +204,31 @@ body {
 
     button {
         position: absolute;
-        bottom: 100px;
+        bottom: 120px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 50px;
+        font-size: 18px;
         color: white;
+
+        &::after {
+            content: url("../../public/assets/image/arrow.svg");
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            animation: motion01 0.7s  ease-in infinite;
+            animation-direction: alternate;
+
+            @keyframes motion01 {
+                0% {
+                    margin-top: -10px;
+                }
+
+                100% {
+                    margin-top: 10px;
+                }
+            }
+        }
     }
 }
 
@@ -190,7 +260,6 @@ body {
         left: 340px;
         // color: #fff;
 
-
         .left-box {
             display: flex;
             flex-direction: column;
@@ -214,13 +283,24 @@ body {
             .name {
                 font-size: 24px;
                 line-height: 46px;
-                color: #E8EDAA;
+                color: #fff;
             }
         }
 
         .spaceman {
             margin-left: -34px;
-            animation-duration: 5s;
+            animation: motion02 0.7s linear infinite;
+            animation-direction: alternate;
+
+            @keyframes motion02 {
+                0% {
+                    margin-top: -10px;
+                }
+
+                100% {
+                    margin-top: 10px;
+                }
+            }
         }
     }
 
@@ -236,23 +316,11 @@ body {
             height: 100%;
         }
     }
-
-    // .forest {
-    //     position: absolute;
-    //     bottom: 0;
-    //     width: 100%;
-
-    //     img {
-    //         display: block;
-    //         width: 100%;
-    //         height: 100%;
-    //         // filter: invert(99%) sepia(55%) saturate(0%) hue-rotate(302deg) brightness(114%) contrast(100%);
-    //     }
-    // }
 }
 
 // Forest --->
 .Forest {
+    position: relative;
     width: 100%;
     z-index: 2;
     margin-top: -630px;
@@ -358,12 +426,12 @@ body {
             }
         }
     }
-
 }
 
 // Project03 ---> 
 .Project.toy {
     background: url(../../public/assets/image/project03_bg.jpg) no-repeat center center/cover;
+    background-color: black;
 
     // .project-title {
     //     h2 {
@@ -385,20 +453,4 @@ body {
             }
         }
     }
-}
-
-.show-menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-}
-
-.hide-menu {
-    width: 100%;
-    height: 100vh;
-    display: none;
 }

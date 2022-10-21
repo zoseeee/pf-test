@@ -1,5 +1,4 @@
 import React from "react";
-import "animate.css";
 
 const About = () => {
   return (
@@ -18,13 +17,13 @@ const About = () => {
           </p>
           {/* <p className="beyond">“To infinity and beyond!”</p> */}
           <p className="name">
-            안녕하세요.
+            안녕하세요?
             <br />
             실패를 원동력으로 성장하는🚀 프론트엔드 개발자
-            이정은입니다.
+            이정은입니다?
           </p>
         </div>
-        <div className="spaceman animate__animated animate__swing animate__infinite	infinite">
+        <div className="spaceman">
           <img
             src={process.env.PUBLIC_URL + "/assets/image/about.png"}
             alt=""
