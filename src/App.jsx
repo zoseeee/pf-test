@@ -10,13 +10,14 @@ import Divider from "./pages/Divider";
 import { Route, Routes } from "react-router-dom";
 import Project02 from "./component/Project02";
 import Project03 from "./component/Project03";
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const App = () => {
   const [load, setLoad] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoad(false);
-    }, 6000);
+    }, 4500);
     return () => {
       clearTimeout(timer);
     };

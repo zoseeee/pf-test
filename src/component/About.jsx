@@ -7,7 +7,7 @@ const About = () => {
         <div className="left-box">
           <div className="about-title-img">
             <img
-              src={process.env.PUBLIC_URL + "/assets/image/anti02.png"}
+              src={process.env.PUBLIC_URL + "/assets/image/test_anti01.png"}
               alt=""
             />
           </div>
@@ -33,12 +33,9 @@ const About = () => {
       <div className="earth">
         <img src={process.env.PUBLIC_URL + "/assets/image/earth.png"} alt="" />
       </div>
-      {/* <div className="forest">
-        <img
-          src={process.env.PUBLIC_URL + "/assets/image/Forest05.png"}
-          alt=""
-        />
-      </div> */}
+      <div className="toil">
+      <img src={process.env.PUBLIC_URL + "/assets/image/toil.png"} alt="" />
+      </div>
     </section>
   );
 };

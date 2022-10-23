@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-const DB = ["WELCOME", "TO", "MY","2022", "PORTFOLIO" ];
+const DB = ["", "WELCOME", "TO", "MY", "2022", "PORTFOLIO" ];
 
 const LoadingPage = () => {
   const [num, setNum] = useState(0);
 
   useEffect(() => {
     const shuffle = () => {
-      if (num > 3) {
+      if (num > 4) {
         return;
       }
       setNum(num + 1);
     };
-    const intervalID = setInterval(shuffle, 650);
+    const intervalID = setInterval(shuffle, 600);
     return () => clearInterval(intervalID);
   }, [num]);
 

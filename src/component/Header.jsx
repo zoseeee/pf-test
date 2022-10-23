@@ -20,54 +20,56 @@ const Header = () => {
           <ul>
             <li>
               <Link to="home" smooth="true" duration={1000}>
-                <h2>home</h2>
+                <h2>HOME</h2>
               </Link>
             </li>
             <li>
               <Link to="about" smooth="true" duration={1000}>
-                <h2>about</h2>
+                <h2>ABOUT</h2>
               </Link>
             </li>
             <li>
               <Link to="project" smooth="true" duration={1000}>
-                <h2>project</h2>
+                <h2>PROJECT</h2>
               </Link>
             </li>
           </ul>
         </nav>
       </div>
-      <ul className={isOpen ? "show-menu" : "hide-menu"}>
-        <li>
-          <Link
-            to="home"
-            smooth="true"
-            duration={1000}
-            onClick={() => toggleMenu(false)}
-          >
-            <h2>home</h2>
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="about"
-            smooth="true"
-            duration={1000}
-            onClick={() => toggleMenu(false)}
-          >
-            <h2>about</h2>
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="project"
-            smooth="true"
-            duration={1000}
-            onClick={() => toggleMenu(false)}
-          >
-            <h2>project</h2>
-          </Link>
-        </li>
-      </ul>
+      <div className={isOpen ? "show-menu" : "hide-menu"}>
+        <ul>
+          <li>
+            <Link
+              to="home"
+              smooth="true"
+              duration={1000}
+              onClick={() => toggleMenu(false)}
+            >
+              <h2>HOME</h2>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="about"
+              smooth="true"
+              duration={1000}
+              onClick={() => toggleMenu(false)}
+            >
+              <h2>ABOUT</h2>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="project"
+              smooth="true"
+              duration={1000}
+              onClick={() => toggleMenu(false)}
+            >
+              <h2>PROJECT</h2>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 };

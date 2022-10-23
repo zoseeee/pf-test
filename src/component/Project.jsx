@@ -10,14 +10,32 @@ const DB = [
   {
     id: 1,
     content: "YouTube",
-  },
-  {
-    id: 1,
-    content: "Spotify",
+    info: "유튜브 사이트를 클론코딩하였습니다. 검색기능, 비디오 상세화면 등을 구현하였습니다. \n(사이트 추가예정입니다.)",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "REACT / JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
   },
   {
     id: 2,
     content: "2022 PORTFOLIO",
+    info: "2022년 포트폴리오 사이트입니다.",
+    type: "개인페이지",
+    work: "개인작업 100%",
+    tools: "REACT / JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
+  },
+  {
+    id: 3,
+    content: "Spotify",
+    info: "스포티파이 사이트를 클론코딩하였습니다. 로그인, 검색기능 등을 구현하였습니다. \n(사이트 추가예정입니다.)",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "REACT / JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
   },
 ];
 
@@ -35,6 +53,9 @@ const Project = () => {
               }
               to="/portfolio-2022"
             >
+              <span>
+                REACT
+              </span>
               01
             </NavLink>
           </li>
@@ -45,6 +66,13 @@ const Project = () => {
               }
               to="/project02"
             >
+              <span
+                className={({ isActive }) =>
+                  "navLink" + (isActive ? ".on" : "")
+                }
+              >
+                JavaScript
+              </span>
               02
             </NavLink>
           </li>
@@ -55,6 +83,13 @@ const Project = () => {
               }
               to="/project03"
             >
+              <span
+                className={({ isActive }) =>
+                  "navLink" + (isActive ? ".on" : "")
+                }
+              >
+                TOY
+              </span>
               03
             </NavLink>
           </li>
@@ -70,38 +105,38 @@ const Project = () => {
         modules={[Navigation, Pagination]}
         pagination={{ clickable: true }}
       >
-        {DB.map((slide) => (
+        {DB.map((slide, idx) => (
           <SwiperSlide className="swiper_items">
             <div className="slide-content">
               <figure className="left-box">
                 <img
-                  src={process.env.PUBLIC_URL + "/assets/image/MAC.png"}
+                  src={process.env.PUBLIC_URL + "/assets/image/project01_draft0" + (idx + 1) + ".png"}
                   alt=""
                 />
               </figure>
               <div className="right-box">
                 <h3>{slide.content}</h3>
-                <p>힌스의 메인페이지를 리디자인하였습니다.</p>
+                <p>{slide.info}</p>
                 <ul>
                   <li>
                     <span>TYPE</span>
-                    <p>개인페이지</p>
+                    <p>{slide.type}</p>
                   </li>
                   <li>
                     <span>WORK</span>
-                    <p>개인작업 100%</p>
+                    <p>{slide.work}</p>
                   </li>
                   <li>
                     <span>TOOLS</span>
-                    <p>HTML5 CSS JavaScript Figma</p>
+                    <p>{slide.tools}</p>
                   </li>
                   <li>
                     <span>FONT</span>
-                    <p>Noto Sans KR</p>
+                    <p>{slide.font}</p>
                   </li>
                   <li>
                     <span>COLOR</span>
-                    <p>개인페이지</p>
+                    <p>{slide.color}</p>
                   </li>
                 </ul>
                 <div>

@@ -1,6 +1,7 @@
 $gc : #94B49F;
 $pc : #FF9494;
 $bc : #90A8CB;
+$wc : #f9f9f9;
 
 // * {
 //     outline: 1px solid #f00;
@@ -19,9 +20,9 @@ body {
 .loadingPage {
     width: 100%;
     height: 100vh;
-    background: url(../../public/assets/image/project03_bg.jpg) no-repeat center center/cover;
+    background: url(../../public/assets/image/loadingPage_bg.jpg) no-repeat center center/cover;
     font-family: 'KoPub Batang', sans-serif;
-    color: #fff;
+    color: $wc;
 
     .loading-word {
         position: absolute;
@@ -36,7 +37,7 @@ body {
         bottom: 5%;
         left: 50%;
         transform: translateX(-50%);
-        color: #fff;
+        color: $wc;
         font-size: 24px;
         animation: flash 1s ease infinite alternate;
 
@@ -80,16 +81,16 @@ body {
                 &:nth-child(3) {
                     width: 30px;
                     height: 4px;
-                    background-color: #fff;
+                    background-color: $wc;
                     margin-bottom: 7px;
                 }
 
                 &:nth-child(2) {
                     width: 41px;
                     height: 4px;
-                    background-color: #fff;
+                    background-color: $wc;
                     margin-bottom: 7px;
-                    transition: all 0.5s ease-out;
+                    transition: all 0.1s ease-out;
                     opacity: 1;
                 }
             }
@@ -100,8 +101,8 @@ body {
                     top: 0;
                     width: 41px;
                     height: 4px;
-                    background-color: #256D85;
-                    ;
+                    background-color: $pc;
+
                     margin-bottom: 7px;
                     rotate: 45deg;
                 }
@@ -109,7 +110,8 @@ body {
                 &:nth-child(2) {
                     width: 41px;
                     height: 4px;
-                    background-color: #256D85;
+                    background-color: $pc;
+
                     margin-bottom: 7px;
                     opacity: 0;
                 }
@@ -119,7 +121,7 @@ body {
                     top: 0;
                     width: 41px;
                     height: 4px;
-                    background-color: #256D85;
+                    background-color: $pc;
                     margin-bottom: 7px;
                     rotate: 135deg;
                 }
@@ -127,7 +129,7 @@ body {
         }
 
         .gnb {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 900;
             color: $pc;
 
@@ -147,8 +149,27 @@ body {
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: #fff;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: $wc;
+        text-align: center;
+
+        ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            h2 {
+                font-size: 50px;
+                font-weight: 900;
+                line-height: 130px;
+
+                &:hover {
+                    color: #FF9494;
+                }
+            }
+        }
     }
 
     .hide-menu {
@@ -211,12 +232,12 @@ body {
         color: white;
 
         &::after {
-            content: url("../../public/assets/image/arrow.svg");
+            content: url("../../public/assets/image/arrow02.png");
             position: absolute;
             top: 100%;
             left: 50%;
             transform: translate(-50%, 50%);
-            animation: motion01 0.7s  ease-in infinite;
+            animation: motion01 0.7s ease-in infinite;
             animation-direction: alternate;
 
             @keyframes motion01 {
@@ -248,7 +269,8 @@ body {
     top: 0;
     width: 100%;
     height: 100vh;
-    background: url(../../public/assets/image/toil.png) no-repeat center center/cover, url(../../public/assets/image/bg_bc.jpg) no-repeat center center/cover;
+    background: url(../../public/assets/image/bg_bc.jpg) no-repeat center center/cover;
+    // url(../../public/assets/image/toil.png) no-repeat center center/cover,
     font-family: 'KoPub Batang', sans-serif;
     z-index: -1;
 
@@ -283,22 +305,22 @@ body {
             .name {
                 font-size: 24px;
                 line-height: 46px;
-                color: #fff;
+                color: $wc;
             }
         }
 
         .spaceman {
             margin-left: -34px;
-            animation: motion02 0.7s linear infinite;
+            animation: motion02 0.8s ease-out infinite;
             animation-direction: alternate;
 
             @keyframes motion02 {
                 0% {
-                    margin-top: -10px;
+                    margin-top: 0px;
                 }
 
                 100% {
-                    margin-top: 10px;
+                    margin-top: 15px;
                 }
             }
         }
@@ -309,11 +331,35 @@ body {
         bottom: 0;
         width: 100%;
         height: 422px;
+        // height: 327px;
 
         img {
             display: block;
             width: 100%;
             height: 100%;
+        }
+    }
+
+    .toil {
+        width: 100%;
+        height: 100%;
+
+
+        img {
+            width: 100%;
+            height: 100%;     
+            // animation: motion03 0.7s ease-out infinite;
+            // animation-direction: alternate;
+
+            // @keyframes motion03 {
+            //     0% {
+            //         margin-top: -10px;
+            //     }
+
+            //     100% {
+            //         margin-top: 5px;
+            //     }
+            // }  
         }
     }
 }
@@ -323,7 +369,7 @@ body {
     position: relative;
     width: 100%;
     z-index: 2;
-    margin-top: -630px;
+    margin-top: -610px;
 
     img {
         display: block;
@@ -339,7 +385,7 @@ body {
     height: 100vh;
     background: url(../../public/assets/image/toss.png) no-repeat center center/cover, url(../../public/assets/image/dot_bg.png) no-repeat center center/cover;
     z-index: 2;
-    background-color: #fff;
+    background-color: $wc;
 
     .project-title {
         border-bottom: 1px solid $bc;
@@ -362,14 +408,21 @@ body {
                 font-size: 26px;
                 font-weight: 900;
                 padding: 15px 0;
+                text-align: right;
 
                 .navLink {
+                    position: relative;
                     color: #ddd;
                     font-weight: 700;
                 }
 
                 .navLink.active {
                     color: #222222;
+                }
+
+                span {
+                    font-size: 16px;
+                    margin-right: 10px;
                 }
             }
         }
@@ -381,7 +434,7 @@ body {
         justify-content: center;
 
         .right-box {
-            padding: 30px 80px;
+            padding: 30px 65px;
 
             h3 {
                 font-size: 50px;
@@ -391,27 +444,31 @@ body {
             }
 
             p {
-                font-size: 16px;
-                margin-bottom: 40px;
+                font-size: 17px;
+                margin-bottom: 70px;
+                white-space: pre-wrap;
+                line-height: 24px;
             }
 
             ul {
-                margin-bottom: 42px;
+                margin-bottom: 16px;
 
                 li {
                     display: flex;
 
                     span {
+                        position: relative;
                         display: block;
                         width: 100px;
                         font-size: 20px;
                         font-weight: 600;
                         color: $bc;
+
                     }
 
                     p {
                         font-size: 18px;
-                        margin-bottom: 30px;
+                        margin-bottom: 26px;
                     }
                 }
             }
@@ -430,7 +487,7 @@ body {
 
 // Project03 ---> 
 .Project.toy {
-    background: url(../../public/assets/image/project03_bg.jpg) no-repeat center center/cover;
+    background: url(../../public/assets/image/project03_bg01.jpg) no-repeat center center/cover;
     background-color: black;
 
     // .project-title {
@@ -441,12 +498,12 @@ body {
 
     .slide-content {
         .right-box {
-            color: #fff;
+            color: $wc;
 
             button {
                 font-weight: 600;
                 font-size: 14px;
-                color: #fff;
+                color: $wc;
                 border: 1px solid $bc;
                 padding: 14px 36px;
                 margin-right: 24px;
