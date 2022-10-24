@@ -9,15 +9,69 @@ import { NavLink } from "react-router-dom";
 const DB = [
   {
     id: 1,
-    content: "HINCE",
+    content: "2022 BIFF",
+    info: "2022 부산국제영화제의 메인페이지를 리디자인하였습니다.",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
+    site: "https://jigoooo.github.io/BIFF/",
   },
   {
     id: 2,
-    content: "2022 BIFF",
+    content: "HINCE",
+    info: "HINCE 메인페이지를 리디자인하였습니다.",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
+    site: "https://jigoooo.github.io/BIFF/",
   },
   {
     id: 3,
+    content: "JASENG",
+    info: "자생한방병원의 메인페이지를 리디자인하였습니다.",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
+    site: "https://jigoooo.github.io/BIFF/",
+  },
+  {
+    id: 4,
+    content: "KIZANIA",
+    info: "키자니아의 메인페이지를 리디자인하였습니다.",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
+    site: "https://jigoooo.github.io/BIFF/",
+  },
+  {
+    id: 5,
+    content: "JAKOMO",
+    info: "자코모의 메인페이지를 리디자인하였습니다.",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
+    site: "https://jigoooo.github.io/BIFF/",
+  },
+  {
+    id: 6,
     content: "GOPIZZA",
+    info: "GOPIZZA의 메인페이지를 리디자인하였습니다.",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
+    site: "https://jigoooo.github.io/BIFF/",
   },
 ];
 
@@ -36,6 +90,7 @@ const Project02 = () => {
               }
               to="/portfolio-2022"
             >
+              <span>REACT</span>
               01
             </NavLink>
           </li>
@@ -46,6 +101,7 @@ const Project02 = () => {
               }
               to="/project02"
             >
+              <span>JavaScript</span>
               02
             </NavLink>
           </li>
@@ -56,6 +112,7 @@ const Project02 = () => {
               }
               to="/project03"
             >
+              <span>TOY</span>
               03
             </NavLink>
           </li>
@@ -71,42 +128,56 @@ const Project02 = () => {
         modules={[Navigation, Pagination]}
         pagination={{ clickable: true }}
       >
-        {DB.map((slide) => (
+        {DB.map((slide, idx) => (
           <SwiperSlide className="swiper_items">
             <div className="slide-content">
               <figure className="left-box">
+                {/* <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/image/project02_draft0" +
+                    (idx + 1) +
+                    ".png"
+                  }
+                  alt=""
+                /> */}
                 <img
-                  src={process.env.PUBLIC_URL + "/assets/image/MAC.png"}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/image/pf03_01.png"
+                  }
                   alt=""
                 />
               </figure>
               <div className="right-box">
                 <h3>{slide.content}</h3>
-                <p>힌스의 메인페이지를 리디자인하였습니다.</p>
+                <p>{slide.info}</p>
                 <ul>
                   <li>
                     <span>TYPE</span>
-                    <p>개인페이지</p>
+                    <p>{slide.type}</p>
                   </li>
                   <li>
                     <span>WORK</span>
-                    <p>개인작업 100%</p>
+                    <p>{slide.work}</p>
                   </li>
                   <li>
                     <span>TOOLS</span>
-                    <p>HTML5 CSS JavaScript Figma</p>
+                    <p>{slide.tools}</p>
                   </li>
                   <li>
                     <span>FONT</span>
-                    <p>Noto Sans KR</p>
+                    <p>{slide.font}</p>
                   </li>
                   <li>
                     <span>COLOR</span>
-                    <p>개인페이지</p>
+                    <p>{slide.color}</p>
                   </li>
                 </ul>
                 <div>
-                  <button>WebPage</button>
+                  <button>
+                    <a href={slide.site} target="_blank" rel="noopener noreferrer">WebPage</a>
+                  </button>
                   <button>StyleGuide</button>
                 </div>
               </div>

@@ -10,10 +10,32 @@ const DB = [
   {
     id: 1,
     content: "Find Golden Snitch",
+    info: "해리포터의 퀴디치 경기를 테마로 한 게임입니다. 골든 스위치 10개를 찾으면 게임 CLEAR ! \n( + 역동적으로 움직일 수 있도록 추가예정입니다.)",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
   },
   {
     id: 2,
     content: "Card Maker",
+    info: "추가예정입니다.",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "REACT / JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
+  },
+  {
+    id: 3,
+    content: "TODO LIST",
+    info: "추가예정입니다.",
+    type: "메인페이지",
+    work: "개인작업 100%",
+    tools: "REACT / JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
   },
 ];
 
@@ -31,6 +53,7 @@ const Project03 = () => {
               }
               to="/portfolio-2022"
             >
+              <span>REACT</span>
               01
             </NavLink>
           </li>
@@ -41,6 +64,7 @@ const Project03 = () => {
               }
               to="/project02"
             >
+              <span>JavaScript</span>
               02
             </NavLink>
           </li>
@@ -51,6 +75,7 @@ const Project03 = () => {
               }
               to="/project03"
             >
+              <span>TOY</span>
               03
             </NavLink>
           </li>
@@ -66,42 +91,53 @@ const Project03 = () => {
         modules={[Navigation, Pagination]}
         pagination={{ clickable: true }}
       >
-        {DB.map((slide) => (
+        {DB.map((slide, idx) => (
           <SwiperSlide className="swiper_items">
             <div className="slide-content">
               <figure className="left-box">
                 <img
-                  src={process.env.PUBLIC_URL + "/assets/image/MAC.png"}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/image/pf03_01.png"
+                  }
                   alt=""
                 />
               </figure>
               <div className="right-box">
                 <h3>{slide.content}</h3>
-                <p>힌스의 메인페이지를 리디자인하였습니다.</p>
+                <p>{slide.info}</p>
                 <ul>
                   <li>
                     <span>TYPE</span>
-                    <p>개인페이지</p>
+                    <p>{slide.type}</p>
                   </li>
                   <li>
                     <span>WORK</span>
-                    <p>개인작업 100%</p>
+                    <p>{slide.work}</p>
                   </li>
                   <li>
                     <span>TOOLS</span>
-                    <p>HTML5 CSS JavaScript Figma</p>
+                    <p>{slide.tools}</p>
                   </li>
                   <li>
                     <span>FONT</span>
-                    <p>Noto Sans KR</p>
+                    <p>{slide.font}</p>
                   </li>
                   <li>
                     <span>COLOR</span>
-                    <p>개인페이지</p>
+                    <p>{slide.color}</p>
                   </li>
                 </ul>
                 <div>
-                  <button>WebPage</button>
+                  <button>
+                    <a
+                      href={slide.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      WebPage
+                    </a>
+                  </button>
                   <button>StyleGuide</button>
                 </div>
               </div>
