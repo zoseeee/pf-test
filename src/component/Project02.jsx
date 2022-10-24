@@ -151,26 +151,26 @@ const Project02 = () => {
               </figure>
               <div className="right-box">
                 <h3>{slide.content}</h3>
-                <p>{slide.info}</p>
+                <p className="info">{slide.info}</p>
                 <ul>
-                  <li>
-                    <span>TYPE</span>
+                <li>
+                    <span>Type</span>
                     <p>{slide.type}</p>
                   </li>
                   <li>
-                    <span>WORK</span>
+                    <span>Work</span>
                     <p>{slide.work}</p>
                   </li>
                   <li>
-                    <span>TOOLS</span>
+                    <span>Tools</span>
                     <p>{slide.tools}</p>
                   </li>
                   <li>
-                    <span>FONT</span>
+                    <span>Font</span>
                     <p>{slide.font}</p>
                   </li>
                   <li>
-                    <span>COLOR</span>
+                    <span>Color</span>
                     <p>{slide.color}</p>
                   </li>
                 </ul>
