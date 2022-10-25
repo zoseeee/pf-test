@@ -130,56 +130,35 @@ const Project02 = () => {
       >
         {DB.map((slide, idx) => (
           <SwiperSlide className="swiper_items">
-            <div className="slide-content">
-              <figure className="left-box">
-                {/* <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/image/project02_draft0" +
-                    (idx + 1) +
-                    ".png"
-                  }
-                  alt=""
-                /> */}
-                <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/image/pf03_01.png"
-                  }
-                  alt=""
-                />
-              </figure>
-              <div className="right-box">
+            <div className="slide_content">
+              <div className="left-box">
                 <h3>{slide.content}</h3>
                 <p className="info">{slide.info}</p>
-                <ul>
-                <li>
-                    <span>Type</span>
-                    <p>{slide.type}</p>
-                  </li>
-                  <li>
-                    <span>Work</span>
-                    <p>{slide.work}</p>
-                  </li>
-                  <li>
-                    <span>Tools</span>
-                    <p>{slide.tools}</p>
-                  </li>
-                  <li>
-                    <span>Font</span>
-                    <p>{slide.font}</p>
-                  </li>
-                  <li>
-                    <span>Color</span>
-                    <p>{slide.color}</p>
-                  </li>
-                </ul>
+                <p className="tools">{slide.tools}</p>
                 <div>
                   <button>
-                    <a href={slide.site} target="_blank" rel="noopener noreferrer">WebPage</a>
+                    <a
+                      href={slide.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      WebPage
+                    </a>
                   </button>
                   <button>StyleGuide</button>
                 </div>
+              </div>
+              <div className="right-box">
+                <a
+                  href="http://naver.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={process.env.PUBLIC_URL + "/assets/image/pf02_01.png"}
+                    alt=""
+                  />
+                </a>
               </div>
             </div>
           </SwiperSlide>

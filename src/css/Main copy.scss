@@ -80,7 +80,7 @@ body {
                     &:nth-child(1) {
                         transform: translateX(-5px);
                     }
-
+    
                     &:nth-child(2) {
                         transform: translateX(5px);
                     }
@@ -134,16 +134,15 @@ body {
 
         button.on {
             div {
-
                 &:nth-child(1),
-                &:nth-child(3) {
-                    background-color: $bc;
-                    height: 4px;
+                &:nth-child(3) {          
+                    background-color: $bc;  
+                    height: 5px;
                 }
 
                 &:nth-child(2) {
-                    background-color: $bc;
-                    height: 4px;
+                    background-color: $bc;  
+                    height: 5px;
                 }
             }
         }
@@ -367,7 +366,7 @@ body {
 
         img {
             width: 100%;
-            height: 100%;
+            height: 100%;     
             // animation: motion03 0.7s ease-out infinite;
             // animation-direction: alternate;
 
@@ -403,7 +402,7 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url(../../public/assets/image/dot_bg.png) no-repeat center center/cover;
+    background: url(../../public/assets/image/toss_03.png) no-repeat center center/cover, url(../../public/assets/image/dot_bg.png) no-repeat center center/cover;
     z-index: 2;
     background-color: $wc;
 
@@ -448,7 +447,78 @@ body {
         }
     }
 
+    .slide-content {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
 
+        .right-box {
+            padding: 30px;
+
+            h3 {
+                font-size: 50px;
+                font-family: 'KoPub Batang', sans-serif;
+                font-weight: 700;
+                margin-bottom: 13px;
+            }
+
+            .info {
+                font-size: 17px;
+                margin-bottom: 50px;
+                white-space: pre-wrap;
+                line-height: 26px;
+            }
+
+            ul {
+                margin-bottom: 40px;
+
+                li {
+                    display: flex;
+                    line-height: 35px;
+
+                    span {
+                        position: relative;
+                        display: block;
+                        width: 100px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: #333;
+
+                        &::after {
+                            content: "";
+                            width: 2px;
+                            height: 40%;
+                            background-color: rgb(228, 228, 228);
+                            position: absolute;
+                            top: 0;
+                            right: 20%;
+                            transform: translateY(60%);
+                        }
+                    }
+
+                    p {
+                        font-size: 16px;
+                        margin-left: 10px;
+                        color: #333;
+                    }
+                }
+            }
+
+            button {
+                font-weight: 600;
+                font-size: 14px;
+                color: $bc;
+                border: 1px solid $bc;
+                padding: 12px 28px;
+                margin-right: 30px;
+
+                a {
+                    display: block;
+                }
+            }
+        }
+    }
 }
 
 // Project03 ---> 
@@ -491,7 +561,7 @@ body {
     position: relative;
     padding: 5px;
     background-color: #2b292d !important;
-
+    
     &::after {
         content: "";
         position: absolute;
@@ -513,61 +583,15 @@ body {
     margin-top: 30px;
 }
 
+.swiper {
+    width: calc(100% - 400px);
+}
+
+.slide-content {
+    padding-bottom: 120px;
+}
+
 .contact {
     width: 100%;
     height: 100vh;
-}
-
-.slide_content {
-    white-space: pre-wrap;
-    display: flex;
-    justify-content: flex-end;
-    // color: #2b292d;
-    padding: 90px 0 100px 0;
-
-    .left-box {
-        padding: 86px 70px 0 0;
-
-        h3 {
-            font-weight: 700;
-            font-size: 80px;
-            margin-bottom: 38px;
-            letter-spacing: -0.02em;
-            line-height: 95px;
-        }
-
-        .info {
-            font-weight: 500;
-            font-size: 16px;
-            margin-bottom: 15px;
-            line-height: 24px;
-        }
-
-        .tools {
-            margin-bottom: 60px;
-            opacity: 0.4;
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        button {
-            font-weight: 600;
-            font-size: 14px;
-            color: $bc;
-            border: 1px solid $bc;
-            padding: 13px 30px;
-            margin-right: 30px;
-
-            a {
-                display: block;
-            }
-        }
-    }
-
-    .right-box {
-        img {
-            display: block;
-            border-radius: 10px;
-        }
-    }
 }

@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const About = () => {
   const { scrollYProgress } = useScroll();
   // const x = useTransform(scrollYProgress, [0.2, 1], ["10%", "200%"]);
-  const y = useTransform(scrollYProgress, [0.5, 1], ["0", "200%"]);
+  const y = useTransform(scrollYProgress, [0.4, 1], ["0", "400%"]);
 
   return (
     <section className="About" id="about">

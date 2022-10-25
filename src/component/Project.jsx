@@ -9,31 +9,31 @@ import { NavLink } from "react-router-dom";
 const DB = [
   {
     id: 1,
-    content: "YouTube",
-    info: "유튜브 사이트를 클론코딩하였습니다. 검색기능, 비디오 상세화면 등을 구현하였습니다. \n(사이트 추가예정입니다.)",
+    content: "YouTube\nClone Coding",
+    info: "유튜브 사이트를 클론코딩하였습니다. \n검색기능, 비디오 클릭시 상세화면으로 이동 등을 구현하였습니다.",
     type: "메인페이지",
     work: "개인작업 100%",
-    tools: "REACT / JavaScript / HTML5 / CSS / Figma",
+    tools: "REACT / JavaScript / HTML5 / CSS / Figma / 개인작업 100%",
     font: "Noto Sans KR",
     color: "#ff0",
   },
   {
     id: 2,
-    content: "2022 PORTFOLIO",
+    content: "2022 \nPORTFOLIO",
     info: "2022년 포트폴리오 사이트입니다.",
     type: "개인페이지",
     work: "개인작업 100%",
-    tools: "REACT / JavaScript / HTML5 / CSS / Figma",
+    tools: "REACT / JavaScript / HTML5 / CSS / Figma / 개인작업 100%",
     font: "Noto Sans KR",
     color: "#ff0",
   },
   {
     id: 3,
     content: "Spotify",
-    info: "스포티파이 사이트를 클론코딩하였습니다. 로그인, 검색기능 등을 구현하였습니다. \n(사이트 추가예정입니다.)",
+    info: "스포티파이 사이트를 클론코딩하였습니다. \n로그인, 검색기능 등을 구현하였습니다. (사이트 추가예정입니다.)",
     type: "메인페이지",
     work: "개인작업 100%",
-    tools: "REACT / JavaScript / HTML5 / CSS / Figma",
+    tools: "REACT / JavaScript / HTML5 / CSS / Figma / 개인작업 100%",
     font: "Noto Sans KR",
     color: "#ff0",
   },
@@ -105,47 +105,11 @@ const Project = () => {
       >
         {DB.map((slide, idx) => (
           <SwiperSlide className="swiper-slide">
-            <div className="slide-content">
-              <figure className="left-box">
-                {/* <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/image/project01_draft0" +
-                    (idx + 1) + "-1" +
-                    ".png"
-                  }
-                  alt=""
-                /> */}
-                <img
-                  src={process.env.PUBLIC_URL + "/assets/image/pf03_01.png"}
-                  alt=""
-                />
-              </figure>
-              <div className="right-box">
+            <div className="slide_content">
+              <div className="left-box">
                 <h3>{slide.content}</h3>
                 <p className="info">{slide.info}</p>
-                <ul>
-                  <li>
-                    <span>Type</span>
-                    <p>{slide.type}</p>
-                  </li>
-                  <li>
-                    <span>Work</span>
-                    <p>{slide.work}</p>
-                  </li>
-                  <li>
-                    <span>Tools</span>
-                    <p>{slide.tools}</p>
-                  </li>
-                  <li>
-                    <span>Font</span>
-                    <p>{slide.font}</p>
-                  </li>
-                  <li>
-                    <span>Color</span>
-                    <p>{slide.color}</p>
-                  </li>
-                </ul>
+                <p className="tools">{slide.tools}</p>
                 <div>
                   <button>
                     <a
@@ -158,6 +122,23 @@ const Project = () => {
                   </button>
                   <button>StyleGuide</button>
                 </div>
+              </div>
+              <div className="right-box">
+                <a
+                  href="http://naver.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/assets/image/pf01_0" +
+                      (idx + 1) +
+                      ".png"
+                    }
+                    alt=""
+                  />
+                </a>
               </div>
             </div>
           </SwiperSlide>

@@ -10,7 +10,7 @@ import Divider from "./pages/Divider";
 import { Route, Routes } from "react-router-dom";
 import Project02 from "./component/Project02";
 import Project03 from "./component/Project03";
-import Test from "./component/Test";
+import Contact from "./component/Contact";
 
 const App = () => {
   const [load, setLoad] = useState(true);
@@ -58,7 +58,7 @@ const App = () => {
           <Route path="/project02" element={<Project02 />} />
           <Route path="/project03" element={<Project03 />} />
         </Routes>
-        <Test />
+        <Contact />
       </main>
     </div>
   );

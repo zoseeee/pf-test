@@ -9,18 +9,8 @@ import { NavLink } from "react-router-dom";
 const DB = [
   {
     id: 1,
-    content: "Find\nGolden Snitch",
-    info: "해리포터의 퀴디치 경기를 테마로 한 게임입니다. 골든 스위치 10개를 찾으면 게임 CLEAR ! \n( + 역동적으로 움직일 수 있도록 추가예정입니다.)",
-    type: "메인페이지",
-    work: "개인작업 100%",
-    tools: "JavaScript / HTML5 / CSS / Figma",
-    font: "Noto Sans KR",
-    color: "#ff0",
-  },
-  {
-    id: 2,
-    content: "Card Maker",
-    info: "추가예정입니다.",
+    content: "YouTube",
+    info: "유튜브 사이트를 클론코딩하였습니다. 검색기능, 비디오 상세화면 등을 구현하였습니다. \n(사이트 추가예정입니다.)",
     type: "메인페이지",
     work: "개인작업 100%",
     tools: "REACT / JavaScript / HTML5 / CSS / Figma",
@@ -28,9 +18,19 @@ const DB = [
     color: "#ff0",
   },
   {
+    id: 2,
+    content: "2022 PORTFOLIO",
+    info: "2022년 포트폴리오 사이트입니다.",
+    type: "개인페이지",
+    work: "개인작업 100%",
+    tools: "REACT / JavaScript / HTML5 / CSS / Figma",
+    font: "Noto Sans KR",
+    color: "#ff0",
+  },
+  {
     id: 3,
-    content: "TODO LIST",
-    info: "추가예정입니다.",
+    content: "Spotify",
+    info: "스포티파이 사이트를 클론코딩하였습니다. 로그인, 검색기능 등을 구현하였습니다. \n(사이트 추가예정입니다.)",
     type: "메인페이지",
     work: "개인작업 100%",
     tools: "REACT / JavaScript / HTML5 / CSS / Figma",
@@ -39,12 +39,12 @@ const DB = [
   },
 ];
 
-const Project03 = () => {
+const Project = () => {
   SwiperCore.use([Navigation]);
   return (
-    <section className="Project toy" id="project">
+    <section className="Project" id="project">
       <header className="project-title">
-        <h2>TOY PROJECT</h2>
+        <h2>MY PROJECT</h2>
         <ul>
           <li>
             <NavLink
@@ -64,7 +64,13 @@ const Project03 = () => {
               }
               to="/project02"
             >
-              <span>JavaScript</span>
+              <span
+                className={({ isActive }) =>
+                  "navLink" + (isActive ? ".on" : "")
+                }
+              >
+                JavaScript
+              </span>
               02
             </NavLink>
           </li>
@@ -75,7 +81,13 @@ const Project03 = () => {
               }
               to="/project03"
             >
-              <span>TOY</span>
+              <span
+                className={({ isActive }) =>
+                  "navLink" + (isActive ? ".on" : "")
+                }
+              >
+                TOY
+              </span>
               03
             </NavLink>
           </li>
@@ -92,12 +104,48 @@ const Project03 = () => {
         pagination={{ clickable: true }}
       >
         {DB.map((slide, idx) => (
-          <SwiperSlide className="swiper_items">
-            <div className="slide_content">
-              <div className="left-box">
+          <SwiperSlide className="swiper-slide">
+            <div className="slide-content">
+              <figure className="left-box">
+                {/* <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/image/project01_draft0" +
+                    (idx + 1) + "-1" +
+                    ".png"
+                  }
+                  alt=""
+                /> */}
+                <img
+                  src={process.env.PUBLIC_URL + "/assets/image/pf03_01.png"}
+                  alt=""
+                />
+              </figure>
+              <div className="right-box">
                 <h3>{slide.content}</h3>
                 <p className="info">{slide.info}</p>
-                <p className="tools">{slide.tools}</p>
+                <ul>
+                  <li>
+                    <span>Type</span>
+                    <p>{slide.type}</p>
+                  </li>
+                  <li>
+                    <span>Work</span>
+                    <p>{slide.work}</p>
+                  </li>
+                  <li>
+                    <span>Tools</span>
+                    <p>{slide.tools}</p>
+                  </li>
+                  <li>
+                    <span>Font</span>
+                    <p>{slide.font}</p>
+                  </li>
+                  <li>
+                    <span>Color</span>
+                    <p>{slide.color}</p>
+                  </li>
+                </ul>
                 <div>
                   <button>
                     <a
@@ -111,18 +159,6 @@ const Project03 = () => {
                   <button>StyleGuide</button>
                 </div>
               </div>
-              <div className="right-box">
-                <a
-                  href="http://naver.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={process.env.PUBLIC_URL + "/assets/image/pf03_01.png"}
-                    alt=""
-                  />
-                </a>
-              </div>
             </div>
           </SwiperSlide>
         ))}
@@ -131,4 +167,4 @@ const Project03 = () => {
   );
 };
 
-export default Project03;
+export default Project;
