@@ -41,6 +41,7 @@ const App = () => {
   //         <Route path="/project02" element={<Project02 />} />
   //         <Route path="/project03" element={<Project03 />} />
   //       </Routes>
+  //       <Contact />
   //     </main>
   //   </div>
   // );
