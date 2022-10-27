@@ -141,7 +141,7 @@ const Project02 = () => {
                 <img
                   src={
                     process.env.PUBLIC_URL +
-                    "/assets/image/pff02_0" +
+                    "/assets/image/pf02__0" +
                     (idx + 1) +
                     ".png"
                   }

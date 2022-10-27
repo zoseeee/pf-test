@@ -34,6 +34,14 @@ const Accordion = ({ title, active, setActive }) => {
             Consequuntur vel aliquam saepe quaerat eligendi, maxime
             reprehenderit alias optio velit error repellat enim praesentium
             magni ducimus fuga nam exercitationem rerum dolor!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consequuntur vel aliquam saepe quaerat eligendi, maxime
+            reprehenderit alias optio velit error repellat enim praesentium
+            magni ducimus fuga nam exercitationem rerum dolor!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consequuntur vel aliquam saepe quaerat eligendi, maxime
+            reprehenderit alias optio velit error repellat enim praesentium
+            magni ducimus fuga nam exercitationem rerum dolor!
           </p>
         </div>
       </div>

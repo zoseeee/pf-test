@@ -1,10 +1,10 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
 
 const DB = [
   {
@@ -40,9 +40,15 @@ const DB = [
 ];
 
 const Project03 = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen((isOpen) => !isOpen);
+  };
+
   SwiperCore.use([Navigation]);
   return (
-    <section className="Project toy" id="project">
+    <section className="Project" id="project">
       <header className="project-title">
         <h2>TOY PROJECT</h2>
         <ul>
@@ -82,46 +88,48 @@ const Project03 = () => {
         </ul>
       </header>
       <Swiper
-        // spaceBetween={50}
-        // slidesPerView={1}
-        loop={true}
+        slidesPerView={2}
+        centeredSlides={true}
+        // loop={true}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
-        className="project-swiper"
+        className="project-swiper02"
         modules={[Navigation, Pagination]}
         pagination={{ clickable: true }}
       >
         {DB.map((slide, idx) => (
-          <SwiperSlide className="swiper_items">
-            <div className="slide_content">
-              <div className="left-box">
+          <SwiperSlide className="project02">
+            <div className="swiper-content">
+              <figure onClick={() => toggleMenu()}>
+                <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/image/pf03__01.png"
+                  }
+                  alt=""
+                />
+
                 <h3>{slide.content}</h3>
-                <p className="info">{slide.info}</p>
-                <p className="tools">{slide.tools}</p>
-                <div>
-                  <button>
-                    <a
-                      href={slide.site}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      WebPage
-                    </a>
-                  </button>
-                  <button>StyleGuide</button>
+              </figure>
+              <div className={isOpen ? "info-wrapper on" : "info-wrapper"}>
+                <div className="info">
+                  <span>about</span>
+                  <p className="info-word">{slide.info}</p>
+                  <span>tools</span>
+                  <p className="tools">{slide.tools}</p>
+                  <div>
+                    <button>
+                      <a
+                        href={slide.site}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        WebPage
+                      </a>
+                    </button>
+                    <button>StyleGuide</button>
+                  </div>
                 </div>
-              </div>
-              <div className="right-box">
-                <a
-                  href="http://naver.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={process.env.PUBLIC_URL + "/assets/image/pf03_01.png"}
-                    alt=""
-                  />
-                </a>
               </div>
             </div>
           </SwiperSlide>

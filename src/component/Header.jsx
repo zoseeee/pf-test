@@ -29,17 +29,22 @@ const Header = () => {
           <ul>
             <li>
               <Link to="home" smooth="true" duration={1000}>
-                <h2>HOME</h2>
+                <h2>home</h2>
               </Link>
             </li>
             <li>
               <Link to="about" smooth="true" duration={1000}>
-                <h2>ABOUT</h2>
+                <h2>about</h2>
               </Link>
             </li>
             <li>
               <Link to="project" smooth="true" duration={1000}>
-                <h2>PROJECT</h2>
+                <h2>project</h2>
+              </Link>
+            </li>
+            <li>
+              <Link to="contact" smooth="true" duration={1000}>
+                <h2>contact</h2>
               </Link>
             </li>
           </ul>
@@ -75,6 +80,16 @@ const Header = () => {
               onClick={() => toggleMenu(false)}
             >
               <h2>PROJECT</h2>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="contact"
+              smooth="true"
+              duration={1000}
+              onClick={() => toggleMenu(false)}
+            >
+              <h2>CONTACT</h2>
             </Link>
           </li>
         </ul>

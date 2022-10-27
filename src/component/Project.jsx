@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { NavLink } from "react-router-dom";
+import { useRef, useState } from "react";
 
 const DB = [
   {
@@ -40,7 +41,29 @@ const DB = [
 ];
 
 const Project = () => {
+  const [swiper, setSwiper] = useState(null);
+  const [mainImageIndex, setmainImageIndex] = useState(0);
+
   SwiperCore.use([Navigation]);
+
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
+
+  const swiperParams = {
+    navigation: {
+      prevEl: navigationPrevRef.current,
+      nextEl: navigationNextRef.current,
+    },
+    onBeforeInit: (swiper) => {
+      swiper.params.navigation.prevEl = navigationPrevRef.current;
+      swiper.params.navigation.nextEl = navigationNextRef.current;
+      swiper.activeIndex = mainImageIndex;
+      swiper.navigation.update();
+    },
+    onSwiper: setSwiper,
+    onSlideChange: (e) => setmainImageIndex(e.activeIndex),
+  };
+
   return (
     <section className="Project" id="project">
       <header className="project-title">
@@ -96,6 +119,8 @@ const Project = () => {
       <Swiper
         // spaceBetween={50}
         // slidesPerView={1}
+        {...swiperParams}
+        ref={setSwiper}
         loop={true}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
@@ -132,7 +157,7 @@ const Project = () => {
                   <img
                     src={
                       process.env.PUBLIC_URL +
-                      "/assets/image/pf01_0" +
+                      "/assets/image/pf01__0" +
                       (idx + 1) +
                       ".png"
                     }
@@ -143,6 +168,24 @@ const Project = () => {
             </div>
           </SwiperSlide>
         ))}
+        <div className="button-wrapper">
+          <button ref={navigationPrevRef} className="prevBtn">
+            <img
+              src={
+                process.env.PUBLIC_URL + "/assets/images/icon_arrow_prev.png"
+              }
+              alt="prevButton"
+            />
+          </button>
+          <button ref={navigationNextRef} className="nextBtn">
+            <img
+              src={
+                process.env.PUBLIC_URL + "/assets/images/icon_arrow_next.png"
+              }
+              alt="NextButton"
+            />
+          </button>
+        </div>
       </Swiper>
     </section>
   );
